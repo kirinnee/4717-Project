@@ -11,6 +11,7 @@ let
       with import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/03428dbaaa23d6bf458770907b0927b377c873a8.tar.gz") { };
       {
         inherit
+          hadolint
           docker
           pre-commit
           coreutils

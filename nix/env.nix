@@ -18,6 +18,7 @@ with pkgs;
   ];
 
   lint = [
+    hadolint
     pre-commit
     nixpkgs-fmt
     prettier
