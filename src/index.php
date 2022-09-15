@@ -11,14 +11,14 @@
 </head>
 <body>
     <div class="container">
-    <?php echo "<h1>Hi! I'm happy</h1>"; ?>
+    <?php echo "<h1>Hi! List of users</h1>"; ?>
 
     <?php
 
-    $conn = mysqli_connect('localhost', 'root', '', "ie4717");
+    $conn = mysqli_connect('db', 'root', 'password', "ie4717");
 
 
-    $query = 'SELECT * From Person';
+    $query = 'SELECT * From Users';
     $result = mysqli_query($conn, $query);
 
     echo '<table class="table table-striped">';

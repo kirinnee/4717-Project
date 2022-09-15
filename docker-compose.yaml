@@ -1,9 +1,31 @@
 version: "2.6"
-
 services:
-  app:
-    image: tomsik68/xampp
-    volumes:
-      - ./src:/www
+  www:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: base
     ports:
-      - 8031:80
+      - "8031:80"
+    volumes:
+      - ./src:/var/www/html/
+  db:
+    image: mysql:8
+    environment:
+      MYSQL_DATABASE: ie4717
+      MYSQL_ROOT_PASSWORD: password
+    volumes:
+      - ./database:/docker-entrypoint-initdb.d
+      - ie4717-mysql-volume:/var/lib/mysql
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - 8032:80
+    environment:
+      PMA_HOST: db
+      MYSQL_USER: root
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: password
+volumes:
+  ie4717-mysql-volume:
+    external: true

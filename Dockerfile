@@ -1,4 +1,6 @@
-FROM php:8-apache
+FROM php:8-apache as base
 RUN docker-php-ext-install mysqli
-WORKDIR /www
-COPY . .
+
+FROM base as prod
+WORKDIR /var/www/html/
+COPY ./src .

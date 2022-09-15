@@ -12,16 +12,27 @@ tasks:
     cmds:
       - chmod -R +x ./scripts
 
+  setup:
+    desc: Setup the working environment
+    cmds:
+      - docker volume create ie4717-mysql-volume
+
   start:
     desc: Startup Docker server
     cmds:
       - docker compose up -d
-      - browser-sync start -p "localhost:8031" --files "src/**/*.*" --startPath "www"
+      - browser-sync start -p "localhost:8031" --files "src/**/*.*"
 
   stop:
     desc: Stop Server
     cmds:
       - docker compose down
+
+  reset:db:
+    desc: Restarts the database
+    cmds:
+      - docker volume rm ie4717-mysql-volume
+      - docker volume create ie4717-mysql-volume
 
   lint:
     desc: Run all Linters

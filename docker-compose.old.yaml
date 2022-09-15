@@ -1,0 +1,9 @@
+version: "2.6"
+
+services:
+  app:
+    image: tomsik68/xampp
+    volumes:
+      - ./src:/www
+    ports:
+      - 8031:80
