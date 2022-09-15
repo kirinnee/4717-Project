@@ -1,0 +1,34 @@
+version: "3"
+
+includes:
+  ci: ./scripts/ci.yml
+  fmt: ./scripts/fmt.yml
+  ide: ./scripts/ide.yml
+  lint: ./scripts/lint.yml
+
+tasks:
+  cfg:scripts:
+    desc: Make all scripts executable
+    cmds:
+      - chmod -R +x ./scripts
+
+  start:
+    desc: Startup Docker server
+    cmds:
+      - docker compose up -d
+      - browser-sync start -p "localhost:8031" --files "src/**/*.*" --startPath "www"
+
+  stop:
+    desc: Stop Server
+    cmds:
+      - docker compose down
+
+  lint:
+    desc: Run all Linters
+    cmds:
+      - task: lint:run
+
+  fmt:
+    desc: Run all Formatters
+    cmds:
+      - task: fmt:run

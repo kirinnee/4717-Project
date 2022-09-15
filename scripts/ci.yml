@@ -1,0 +1,32 @@
+version: "3"
+
+tasks:
+  isolate:
+    desc: Create an isolated CI environment
+    cmds:
+      - ./scripts/isolate.sh
+  isolate:nix-shell:
+    desc: Create an isolated CI environment and enter CI nix-shell
+    cmds:
+      - ./scripts/isolate.sh ":nix-shell:"
+  precommit:emulate:
+    desc: Execute pre-commit for CI with full emulation
+    cmds:
+      - ./scripts/isolate.sh pre-commit
+
+  precommit:
+    desc: Execute pre-commit for CI
+    cmds:
+      - nix-shell nix/shells.nix -A ci --run scripts/ci/pre-commit.sh
+
+  test:
+    desc: Execute tests for CI
+    cmds:
+      - nix-shell nix/shells.nix -A ci --run scripts/ci/test.sh
+
+  test:emulate:
+    desc: Execute tests for CI with full emulation
+    env:
+      CI_EMULATE_AFTER: enter
+    cmds:
+      - ./scripts/isolate.sh test

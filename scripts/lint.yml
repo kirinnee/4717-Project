@@ -1,0 +1,23 @@
+version: "3"
+
+tasks:
+  run:
+    desc: Run all linters
+    cmds:
+      - task: docker
+      - task: sh
+      - task: ts
+  ts:
+    desc: Lints TypeScript, JavaScript and JSON
+    cmds:
+      - tsc --noEmit
+      - eslint -c ./config/.eslintrc.js --fix 'src/**/*.{js,jsx,ts,tsx,json}'
+      - eslint -c ./config/.eslintrc.js --fix 'tests/**/*.{js,jsx,ts,tsx,json}'
+  docker:
+    desc: Lints Docker files
+    cmds:
+      - find . -name "Dockerfile" -not \( -path "*/node_modules/*" -prune \) -exec hadolint {} +
+  sh:
+    desc: Lints shell scripts
+    cmds:
+      - shfmt -f . | xargs shellcheck
