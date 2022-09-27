@@ -1,44 +1,24 @@
 <html>
  <head>
-  <title>Hello...</title>
-
+  <title>Projectionist</title>
   <meta charset="utf-8">
-
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
+  <link rel="stylesheet" href="index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-    <?php echo "<h1>Hi! List of users</h1>"; ?>
-
-    <?php
-
-    $conn = mysqli_connect('db', 'root', 'password', "ie4717");
-
-
-    $query = 'SELECT * From Users';
-    $result = mysqli_query($conn, $query);
-
-    echo '<table class="table table-striped">';
-    echo '<thead><tr><th></th><th>id</th><th>name</th></tr></thead>';
-    while($value = $result->fetch_array(MYSQLI_ASSOC)){
-        echo '<tr>';
-        echo '<td><a href="#"><span class="glyphicon glyphicon-search"></span></a></td>';
-        foreach($value as $element){
-            echo '<td>' . $element . '</td>';
-        }
-
-        echo '</tr>';
-    }
-    echo '</table>';
-
-    $result->close();
-
-    mysqli_close($conn);
-
-    ?>
     </div>
+    <footer>
+        <div>
+            <h3>PROJECTIONIST</h3>
+            <p>50 Nanyang Avenue, South Spine 4, #B1-00, Singapore 639798</p>
+        </div>
+        <div>
+            <h3>- Cinema Box Office Hours -</h3>
+            <p>Mon - Fri: 3pm - 8:30pm | Sat/Sun/PH: 1pm - 8:30pm</p>
+            <p>Email: <a href="mailto:info@projectionist.sg">info@projectionist.sg</a></p>
+        </div>
+    </footer>
 </body>
 </html>
