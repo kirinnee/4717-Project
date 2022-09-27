@@ -1,0 +1,18 @@
+.nav-ele-header {
+    background-color: black;
+    padding: 12px 24px;
+    transition: all 0.2s;
+    color: white;
+}
+
+.nav-ele-header:hover {
+    background: #00000088;
+
+}
+
+.nav-ele-link {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+
+}

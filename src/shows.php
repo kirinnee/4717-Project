@@ -7,4 +7,4 @@
     <body>
         <?php require("./lib/nav_bar/index.php") ?>
     </body>
-</html>
+</html> 
