@@ -3,12 +3,15 @@
   <title>Projectionist</title>
   <meta charset="utf-8">
   <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="lib/nav_bar/index.css">
+  <link rel="stylesheet" href="lib/nav_ele/index.css">
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 </head>
 <body>
-    </div>
+    <?php require("./lib/nav_bar/index.php") ?>
     <footer>
         <div>
             <h3>PROJECTIONIST</h3>
