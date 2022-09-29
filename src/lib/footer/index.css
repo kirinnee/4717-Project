@@ -1,0 +1,16 @@
+.footer{
+    background-color:#161616;
+    text-align: center;
+}
+
+.footer div{
+    color:white;
+    font-family: 'Poppins', sans-serif;
+    padding: 20px;
+}
+
+.footer a:link {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+}

@@ -1,10 +1,13 @@
 <html>
     <head>
-        <title>Projectionist</title>
-        <link rel="stylesheet" href="./lib/nav_bar/index.css" />
-        <link rel="stylesheet" href="./lib/nav_ele/index.css" />
+    <?php (require("./lib/head.php"))(
+        "Projectionist - Shows", [ 
+            "footer", "nav_bar", "nav_ele" 
+        ], []); 
+    ?>
     </head>
     <body>
-        <?php require("./lib/nav_bar/index.php") ?>
+    <?php (require("./lib/nav_bar/index.php"))("shows") ?>
+        <?php require("./lib/footer/index.php") ?>
     </body>
 </html> 
