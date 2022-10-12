@@ -1,9 +1,9 @@
 <html>
     <head>
     <?php (require("./lib/head.php"))(
-        "Projectionist - Shows", [ 
-            "footer", "nav_bar", "nav_ele" 
-        ], []); 
+        "Projectionist - Shows", [
+            "footer", "nav_bar", "nav_ele"
+        ], []);
     ?>
     </head>
     <body>

@@ -1,6 +1,6 @@
 .carousel .slider {
     width: 90%;
-    max-width: 1200px;    
+    max-width: 1200px;
     height: 100%;
 }
 .carousel:after {
@@ -95,7 +95,7 @@
     background-color: black;
     border-radius: 50%;
 }
-    
+
 .carousel .post .line {
     position: absolute;
     z-index: 5;
@@ -151,7 +151,7 @@
 }
 
 .carousel .slider .real {
-    
+
     position: relative;
     display: flex;
 
@@ -203,7 +203,7 @@
 
 .carousel .control .radio {
     cursor: pointer;
-    height: 15px; 
+    height: 15px;
     width: 15px;
     border-radius: 50%;
     background-color: white;
@@ -212,7 +212,7 @@
 
 .carousel .control .radio:hover {
     cursor: pointer;
-    height: 18px; 
+    height: 18px;
     width: 18px;
     border-radius: 50%;
     background-color: white;

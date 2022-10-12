@@ -1,13 +1,14 @@
 <html>
     <head>
     <?php (require("./lib/head.php"))(
-        "Projectionist - Contact", [ 
-            "footer", "nav_bar", "nav_ele" 
-        ], []); 
+        "Projectionist - Contact", [
+            "footer", "nav_bar", "nav_ele"
+        ], []);
     ?>
     </head>
     <body>
     <?php (require("./lib/nav_bar/index.php"))("contact") ?>
         <?php require("./lib/footer/index.php") ?>
+        <?php require("./lib/contact_card/index.php") ?>
     </body>
 </html>

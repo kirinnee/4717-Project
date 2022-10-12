@@ -12,7 +12,7 @@ return function(){
         <div class="date date-day" option="3" onclick="chooseDate(3)">
             <div class="actual-date">
             <div>30 SEP</div>
-                
+
             </div>
             <div class="day">
                 <div>FRI</div>
@@ -21,7 +21,7 @@ return function(){
         <div class="date date-day" option="4" onclick="chooseDate(4)">
         <div class="actual-date">
             <div>1 OCT</div>
-                
+
             </div>
             <div class="day">
                 <div>SAT</div>
@@ -30,7 +30,7 @@ return function(){
         <div class="date date-day" option="5" onclick="chooseDate(5)">
             <div class="actual-date">
             <div>2 OCT</div>
-                
+
             </div>
             <div class="day">
                 <div>SUN</div>
@@ -39,7 +39,7 @@ return function(){
         <div class="date date-day" option="6" onclick="chooseDate(6)">
             <div class="actual-date">
             <div>3 OCT</div>
-                
+
             </div>
             <div class="day">
                 <div>MON</div>
@@ -48,7 +48,7 @@ return function(){
         <div class="date date-day" option="7" onclick="chooseDate(7)">
              <div class="actual-date">
             <div>4 OCT</div>
-                
+
             </div>
             <div class="day">
                 <div>TUE</div>

@@ -5,7 +5,7 @@ return function($title, $img, $description, $date){
     <div class="date">
     </div>
     <div class="content">
-        <div class="image"> 
+        <div class="image">
             <img src="$img" alt="$title">
         </div>
         <div class="description">
@@ -15,7 +15,7 @@ return function($title, $img, $description, $date){
             Book Now!
         </a>
     </div>
-    
+
 </div>
 EOL;
 }
