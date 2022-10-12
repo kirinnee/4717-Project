@@ -6,7 +6,7 @@ return function(){
 
     </div>
     <div class="text">
-    
+
     </div>
 </footer>
 EOL;
