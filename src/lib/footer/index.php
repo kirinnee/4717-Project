@@ -1,6 +1,4 @@
-<?php
-return function(){
-    echo <<<EOL
+<html>
     <footer class="footer">
     <div>
         <h3>PROJECTIONIST</h3>
@@ -11,7 +9,5 @@ return function(){
         <p>Mon - Fri: 3pm - 8:30pm | Sat/Sun/PH: 1pm - 8:30pm</p>
         <p>Email: <a href="mailto:info@projectionist.sg">info@projectionist.sg</a></p>
     </div>
-</footer>
-EOL;
-}
-?>
+    </footer>
+</html>

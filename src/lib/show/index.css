@@ -7,7 +7,36 @@
 
 .show .date {
     flex-basis: 200px;
+    font-family: Poppins, sans-serif;
+    border: 3px solid #FFFFFF;
+    max-width: 100px;
+    max-height: 100px;
 }
+
+.show .date .actual-date {
+    padding: 12px;
+    font-size: 20px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#FFFFFF;
+}
+.show .date .day {
+    padding: 12px;
+    font-size: 20px;
+    height: 20px;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.show .date .date div {
+    text-align: center;
+
+}
+
 
 .show .content {
     padding: 36px 24px;
@@ -39,7 +68,8 @@
     text-align: justify;
     max-width: 500px;
     font-family: Poppins, sans-serif;
-    font-size: 18px;
+    font-size: 0.9em;
+    padding: 10px;
 }
 
 .show .action {
@@ -48,7 +78,7 @@
     cursor: pointer;
     text-decoration: none;
     padding: 16px 20px;
-    background: #161616;
+    background: #000000;
     border: 2px solid white;
     transition: all 0.2s;
 }

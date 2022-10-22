@@ -4,10 +4,11 @@
 }
 
 .footer div{
-    color:white;
+    color:#CDCDCD;
     font-family: 'Poppins', sans-serif;
     padding: 20px;
 }
+
 
 .footer a:link {
     color: white;
