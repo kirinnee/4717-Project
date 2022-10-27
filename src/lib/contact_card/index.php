@@ -1,6 +1,6 @@
 <html>
     <body>
-    <section class="contact">
+    <div class="contact">
         <div class="box-main">
             <h1>Contact Us</h1>
             <h3>About us</h3>
@@ -11,6 +11,7 @@
                     <p class="center" style="text-decoration:none;color:white;">
                     The projectionist is a passion project by a group of friends that love with the cinema.                    </p>
                 </div>
+                <br>
                 <div id="team">
                     <img src=".\lib\images\stock-team.jpg" alt="Picture_2">
                     <h3>The Team</h3>
@@ -20,8 +21,8 @@
                 </div>
             </div>
         </div>
-    </section>
-    <section class="service">
+    </div>
+    <div class="service" >
         <h1 id="head">
             Looking for more?</h1>
         <div id="service">
@@ -45,6 +46,6 @@
                 </p>
             </div>
         </div>
-    </section>
+    </div>
     </body>
 </html>
