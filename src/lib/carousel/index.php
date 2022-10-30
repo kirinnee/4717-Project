@@ -1,8 +1,13 @@
 <?php
-return function(){
+return function ($movies, $id) {
+
+    $size = count($movies);
     echo <<<EOL
+    <script>
+        const c_$id = carousel($size, "$id");
+    </script>
     <div class='carousel'>
-    <div class='pre' onclick="moveLeft()">
+    <div class='pre' onclick="c_$id.moveLeft()">
         <div class="up">
         </div>
         <div class="down">
@@ -10,35 +15,45 @@ return function(){
         <div class="line">
         </div>
     </div>
-    <div class='slider'>
-        <div class='real' id='real'>
-            <div class="slide">
-                1
-            </div>
-            <div class="slide">
-                2
-            </div>
-            <div class="slide">
-                3
-            </div>
-            <div class="slide">
-                4
-            </div>
-            <div class="slide">
-                5
-            </div>
+    <div class='slider' id="slider-$id">
+        <div class='real' id='$id'>
+EOL;
+    foreach ($movies as $m) {
+        echo <<<EOL
+<div class="slide">
+      <img src="$m->image" alt="Image" />
+</div>
+EOL;
+    }
+    echo <<<EOL
         </div>
         <div class="control">
-            <div class="radio" onclick="moveTo(0)"></div>
-            <div class="radio" onclick="moveTo(1)"></div>
-            <div class="radio" onclick="moveTo(2)"></div>
-            <div class="radio" onclick="moveTo(3)"></div>
-            <div class="radio" onclick="moveTo(4)"></div>
+EOL;
+
+    foreach ($movies as $key => $value) {
+        echo <<<EOL
+    <div class="radio" onclick="c_$id.moveTo($key)" radio-index="$key">
+        <div class="radio-display-inner">
+
+        </div>
+         <div class="radio-display-inner-colored">
+
+        </div>
+        <div class="radio-display-outer">
+
         </div>
     </div>
+EOL;
+    }
+    echo <<<EOL
+        </div>
+    </div>
+    <script>
+        c_$id.init();
+    </script>
 
 
-    <div class='post' onclick="moveRight()">
+    <div class='post' onclick="c_$id.moveRight()">
     <div class="up">
     </div>
     <div class="down">

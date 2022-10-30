@@ -15,6 +15,7 @@ with pkgs;
   ];
 
   dev = [
+    phpstorm
   ];
 
   lint = [

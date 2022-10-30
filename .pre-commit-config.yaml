@@ -11,13 +11,6 @@ repos:
       - id: shellcheck
   - repo: local
     hooks:
-      - id: ts-lint
-        name: Lint TypeScript and JavaScript files
-        entry: eslint -c ./config/.eslintrc.js --fix
-        files: ^(src|tests)/.*\.(js|ts|json|jsx|tsx)$
-        pass_filenames: true
-        language: system
-
       - id: docker-lint
         name: Lint Docker files
         entry: hadolint
@@ -43,20 +36,6 @@ repos:
         name: Format YAML with prettier
         entry: prettier -w
         files: ^.*\.(yaml|yml)$
-        pass_filenames: true
-        language: system
-
-      - id: ts-fmt
-        name: Format Markdown with prettier
-        entry: prettier -w
-        files: ^.*\.(MD|md)$
-        pass_filenames: true
-        language: system
-
-      - id: md-fmt
-        name: Format Markdown with prettier
-        entry: prettier --config ./config/.prettierrc -w
-        files: ^.*\.(js|ts|json|jsx|tsx)$
         pass_filenames: true
         language: system
 

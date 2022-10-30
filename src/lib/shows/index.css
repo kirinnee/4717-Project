@@ -9,3 +9,106 @@
     max-width: 1200px;
     margin: auto;
 }
+
+.show {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 24px auto;
+}
+
+.show .date {
+    flex-basis: 200px;
+    font-family: Poppins, sans-serif;
+    border: 3px solid #FFFFFF;
+    max-width: 100px;
+    max-height: 100px;
+    margin: 0 16px;
+}
+
+.show .date .actual-date {
+    padding: 12px;
+    font-size: 20px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#FFFFFF;
+}
+.show .date .day {
+    padding: 12px;
+    font-size: 20px;
+    height: 20px;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.show .date .date div {
+    text-align: center;
+
+}
+
+.show .content {
+    padding: 24px 24px;
+    border: 2px solid white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    color: white;
+}
+
+.show .image {
+    position: relative;
+    flex-basis: 200px;
+    width: 200px;
+    height: 150px;
+    overflow: hidden;
+}
+
+.show .image img {
+    height: 100%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.show .description {
+    max-width: 500px;
+    padding: 12px;
+}
+
+.show .description .title{
+    text-align: justify;
+    font-family: Poppins, sans-serif;
+    font-size: 1.5em;
+    padding: 8px 0;
+}
+.show .description .desc{
+    text-align: justify;
+    font-family: Poppins, sans-serif;
+    font-size: 0.9em;
+    padding: 8px 0;
+}
+
+.show .action {
+    display: block;
+    text-align: center;
+    margin: 20px 0;
+    font-family: Poppins, sans-serif;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 16px 20px;
+    background: #000000;
+    border: 2px solid white;
+    transition: all 0.2s;
+}
+
+.show .action:hover {
+    background: #FFFFFF20;
+}

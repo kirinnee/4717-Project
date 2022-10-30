@@ -17,6 +17,10 @@ services:
     volumes:
       - ./database:/docker-entrypoint-initdb.d
       - ie4717-mysql-volume:/var/lib/mysql
+  adminer:
+    image: adminer
+    ports:
+      - "8080:8080"
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     ports:

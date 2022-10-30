@@ -17,6 +17,16 @@ tasks:
     cmds:
       - docker volume create ie4717-mysql-volume
 
+  start:docker:
+    desc: Starts Docker servers only
+    cmds:
+      - docker compose up -d
+
+  log:db:
+    desc: Starts logging database
+    cmds:
+      - docker compose logs db -f
+
   start:
     desc: Startup Docker server
     cmds:

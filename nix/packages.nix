@@ -2,9 +2,9 @@
 let
   pkgs = rec {
     atomi = (
-      with import (fetchTarball "https://github.com/kirinnee/test-nix-repo/archive/refs/tags/v9.2.0.tar.gz");
+      with import (fetchTarball "https://github.com/kirinnee/test-nix-repo/archive/refs/tags/v10.1.0.tar.gz");
       {
-        inherit pls;
+        inherit pls phpstorm;
       }
     );
     "Unstable 26th Aug 2022" = (
