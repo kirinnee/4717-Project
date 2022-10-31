@@ -1,13 +1,7 @@
-<html>
-    <head>
-    <?php (require("./lib/head.php"))(
-        "Projectionist - Shows", [
-            "footer", "nav_bar", "nav_ele"
-        ], []);
-    ?>
-    </head>
-    <body>
-    <?php (require("./lib/nav_bar/index.php"))("shows") ?>
-        <?php require("./lib/footer/index.php") ?>
-    </body>
-</html> 
+<?php
+$id = $_GET["id"];
+if ($id == "") {
+    require_once("./views/shows_all.php");
+} else {
+    require_once("./views/shows_single.php");
+}

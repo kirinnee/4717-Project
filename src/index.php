@@ -27,7 +27,7 @@ $movies = $movieRepo->getAll();
         "date_picker",
         "carousel",
         "shows",
-    ]);
+    ], []);
     ?>
 
 </head>

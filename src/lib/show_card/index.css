@@ -1,0 +1,117 @@
+.show-card{
+    box-sizing: border-box;
+    color: white;
+    margin: 16px;
+    border: 4px solid #252525;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: width 0.3s, opacity 0.3s ;
+}
+
+.show-card .show-image{
+    width: 100%;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.show-card .show-image img{
+    width: 100%;
+    position: absolute;
+    left:50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s;
+    transform-origin: center;
+}
+.show-card .show-image:hover img{
+
+    transform: translate(-50%, -50%) scale(150%, 150%);
+}
+
+.show-card .show-image .overlay{
+    background: black;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 200;
+    font-family: Raleway, Poppins, sans-serif;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.show-card .show-image:hover .overlay{
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+
+.show-card .title {
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    text-align: center;
+}
+
+.show-card .genre {
+    font-weight: 200;
+    font-family: Raleway, Poppins, sans-serif;
+    font-size: 12px;
+    height: 36px;
+    margin: 12px 0;
+    text-align: center;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 1px;
+}
+
+.show-card .title div {
+    font-weight: 300;
+    font-family: Raleway, Poppins, sans-serif;
+}
+
+.show-card .content {
+    padding: 0 16px;
+    height: 300px;
+    font-size: 14px;
+    text-align: justify;
+    margin: 8px 0;
+}
+
+.show-card .action-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.show-card .book-button{
+    border: 2px solid transparent;
+    margin-bottom: 24px;
+    transition: border 0.3s;
+    cursor: pointer;
+}
+
+.show-card .book-button:hover{
+    border: 2px solid white;
+}
+
+.show-card .book-button div{
+    font-weight: 200;
+    font-family: Poppins, sans-serif;
+    border: 1px solid white;
+    padding: 12px 24px;
+}

@@ -3,7 +3,7 @@
     <?php (require("./lib/head.php"))(
         "Projectionist - Contact", [
             "footer", "nav_bar", "nav_ele","contact_card"
-        ], []);
+        ], [], []);
     ?>
     </head>
     <body>
