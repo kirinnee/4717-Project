@@ -71,6 +71,30 @@ class Movie {
     }
 }
 
+class GenreRepo {
+    public $conn;
+
+    public function __construct($conn)
+    {
+        $this->conn = $conn;
+    }
+
+    public function getAll()
+    {
+        $db = ($this->conn)();
+        $r = $db->query("SELECT * FROM Genres");
+        if($r) {
+            $genre = array();
+            while($row = $r->fetch_assoc()) {
+                $genre[] = $row["name"];
+            }
+            return $genre;
+        } else {
+            return array();
+        }
+    }
+}
+
 class MovieRepo {
 
     public $conn;
@@ -78,6 +102,46 @@ class MovieRepo {
     public function __construct($conn)
     {
         $this->conn = $conn;
+    }
+
+    public function get($id){
+        $db = ($this->conn)();
+        $r = $db->query("SELECT m.id as movieId, m.name as name, m.description as `desc`, m.release_date as releaseDate, m.rating as rating, m.duration as duration, m.trailer as trailer, g.name as genre, g.description as genreDesc, g.id as genreId, s.id as showId, s.show_time as showTime, t.id as theatreId, t.name as theatreName, t.address as theatreAddress FROM Movies as m JOIN MovieGenre as mg ON m.id = mg.movie_id JOIN Genres as g ON mg.genre_id = g.id JOIN Shows as s ON s.movie_id = m.id JOIN Theatres as t ON s.theatre_id = t.id WHERE m.id = '$id'");
+
+        if($r) {
+            $movieTable = array();
+            while($row = $r->fetch_assoc()) {
+                if(!isset($movieTable[$row["movieId"]])) {
+                    $id = $row["movieId"];
+                    $movieTable[$row["movieId"]] = new Movie(
+                        $id,
+                        $row["name"],
+                        "./image.php?id=$id",
+                        $row["desc"],
+                        $row["releaseDate"],
+                        $row["rating"],
+                        $row["duration"],
+                        $row["trailer"],
+                    );
+                }
+                if(!isset($movieTable[$row["movieId"]]->genre[$row["genreId"]])) {
+                    $genre = new Genre($row["genreId"], $row["genre"], $row["genreDesc"]);
+                    $movieTable[$row["movieId"]]->genre[$row["genreId"]] = $genre;
+                }
+                if(!isset($movieTable[$row["movieId"]]->shows[$row["showId"]])) {
+                    $theatre = new Theatre($row["theatreId"], $row["theatreName"], $row["theatreAddress"]);
+                    $timestamp = $row["showTime"];
+                    $date = date('Y-m-d',strtotime($timestamp));
+                    $time = date('H:i:s',strtotime($timestamp));
+                    $show = new Show($row["showId"], $theatre, $date, $time);
+                    $movieTable[$row["movieId"]]->shows[$row["showId"]] = $show;
+                }
+            }
+            $db->close();
+            return $movieTable[$id];
+        } else {
+            return null;
+        }
     }
 
     public function getAll()
@@ -114,6 +178,7 @@ class MovieRepo {
                     $movieTable[$row["movieId"]]->shows[$row["showId"]] = $show;
                 }
             }
+            $db->close();
             return $movieTable;
         } else {
             return array();

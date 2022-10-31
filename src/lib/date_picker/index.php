@@ -4,7 +4,7 @@ return function () {
     $today = date('Y-m-d', strtotime("today"));
 
     $days = array();
-    for ($i = 0; $i < 5; $i++) {
+    for ($i = 1; $i < 5; $i++) {
         $days[] = strtotime("+ $i day");
     }
 

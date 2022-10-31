@@ -1,11 +1,13 @@
 <?php
-return function($title, $css, $js) {
+return function($title, $css, $js, $defered) {
     echo <<<EOL
 <title>$title</title>
 <meta charset="utf-8">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins&family=Raleway:wght@100;200;300;400&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="index.css">
 EOL;
     foreach ($css as $v) {
@@ -18,7 +20,11 @@ EOL;
         <script src="lib/$v/index.js"></script>
 EOL;
     }
-
+    foreach ($defered as $v) {
+        echo <<<EOL
+        <script defer src="lib/$v/index.js"></script>
+EOL;
+    }
 }
 
 ?>
