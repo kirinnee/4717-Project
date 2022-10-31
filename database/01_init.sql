@@ -69,6 +69,16 @@ CREATE TABLE Booking
     FOREIGN KEY (seat_id) REFERENCES Seats (id)
 );
 
+CREATE TABLE Images
+(
+    id      int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    poster   longtext    NOT NULL,
+    image1   longtext    NOT NULL,
+    image2   longtext    NOT NULL,
+    movie_id int(11) NOT NULL,
+    FOREIGN KEY (movie_id) REFERENCES Movies (id)
+);
+
 ALTER TABLE Seats ADD UNIQUE unique_index(show_id, seat_no);
 
 delimiter //
