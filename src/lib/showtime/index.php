@@ -48,14 +48,20 @@ EOL;
                 <th>Select</th>
             </tr>
 EOL;
+    $flag1 = false;
     foreach ($shows[$firstDate] as $v) {
         $time = date('h:i A', strtotime($v->time));
         $loc = $v->theatre->name;
+        $selected = "";
+        if(!$flag1) {
+            $selected = "checked";
+            $flag1 = true;
+        }
         echo <<<EOL
                 <tr>
                     <td>$loc</td>
                     <td>$time</td>
-                    <td><input type="radio" name="show" value="$v->id"></td>
+                    <td><input type="radio" $selected name="show" value="$v->id"></td>
                 </tr>
         EOL;
     }
