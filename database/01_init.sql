@@ -2,12 +2,11 @@ CREATE TABLE Movies
 (
     id           int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
     name         varchar(64) NOT NULL,
-    image        longtext    NOT NULL,
+    trailer      longtext    NOT NULL,
     description  longtext    NOT NULL,
     release_date date        NOT NULL,
     rating       int(11) NOT NULL,
-    duration     int(11) NOT NULL,
-    trailer      longtext    NOT NULL
+    duration     int(11) NOT NULL
 );
 
 CREATE TABLE Genres
@@ -80,6 +79,15 @@ CREATE TABLE Images
 );
 
 ALTER TABLE Seats ADD UNIQUE unique_index(show_id, seat_no);
+
+delimiter //
+CREATE TRIGGER Booking_AFTER_INSERT AFTER INSERT ON Booking
+    FOR EACH ROW
+BEGIN
+    UPDATE Seats SET status = 'TAKEN' WHERE id = NEW.seat_id;
+END; //
+
+delimiter ;
 
 delimiter //
 CREATE TRIGGER Seats_AFTER_INSERT AFTER INSERT ON Shows

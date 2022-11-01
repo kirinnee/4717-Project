@@ -1,5 +1,4 @@
 function showElement(showDate, movie) {
-
     const dateDiv = () => {
         return `<div class="date">
             <div class="actual-date">
@@ -23,7 +22,7 @@ function showElement(showDate, movie) {
 
     const contentDiv = `<div class="content">
         <div class="image">
-            <img src="${movie.image}" alt="${movie.name}">
+            <img src="${movie.poster}" alt="${movie.name}">
         </div>
          <div class="description">
             <div class="title">${movie.name}</div>

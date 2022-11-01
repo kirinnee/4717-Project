@@ -4,14 +4,14 @@ function showElement(movie) {
         .reduce((a,b) => `${a} | ${b}`);
     return `
 <div class="show-card" id="movie-${movie.id}">
-    <div class="show-image">
-        <img src="${movie.image}" alt="${movie.name}">
+    <a class="show-image" href="./shows.php?id=${movie.id}">
+        <img src="${movie.image2}" alt="${movie.name}">
         <div class="overlay">
             <div>
                 SEE MORE DETAILS
             </div>
         </div>
-    </div>
+    </a>
     <div class="genre">
         <div>${genres}</div>
     </div>
@@ -22,11 +22,11 @@ function showElement(movie) {
         <div>${movie.desc}</div>
     </div>
     <div class="action-bar">
-        <div class="book-button">
+        <a class="book-button" href="./shows.php?id=${movie.id}">
             <div>
                 BOOK NOW
             </div>
-        </div>
+        </a>
     </div>
 
 </div>`

@@ -21,7 +21,7 @@ EOL;
     foreach ($movies as $m) {
         echo <<<EOL
 <div class="slide">
-      <img src="$m->image" alt="Image" />
+      <img src="$m->image1" alt="Image" />
 </div>
 EOL;
     }

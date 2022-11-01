@@ -1,0 +1,32 @@
+.title{
+    font-size: 36px;
+    font-weight: 200;
+    font-family: Poppins, sans-serif;
+    text-align: center;
+    margin: 12px;
+    color: white;
+}
+
+.genre-holder {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 12px;
+}
+
+.genre {
+    font-weight: 200;
+    font-family: Raleway, Poppins, sans-serif;
+    font-size: 12px;
+    background: #FFFFFF22;
+    color: white;
+    margin: 8px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.genre:hover {
+    background: #FFFFFF44;
+}

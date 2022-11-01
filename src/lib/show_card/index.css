@@ -99,6 +99,8 @@
 }
 
 .show-card .book-button{
+    text-decoration: none;
+    color: white;
     border: 2px solid transparent;
     margin-bottom: 24px;
     transition: border 0.3s;
