@@ -6,28 +6,32 @@ function transformMovies(movies) {
             duration,
             genre,
             id,
-            image,
             rating,
             releaseDate,
             trailer,
-            shows
-        }])=> {
+            shows,
+            image1,
+            image2,
+            poster,
+        }]) => {
             const movie = {
                 name,
                 desc,
                 duration,
                 genre,
                 id,
-                image,
                 rating,
                 releaseDate,
                 trailer,
+                image1,
+                image2,
+                poster,
                 shows: {},
             }
-            for(let k in shows) {
-                if(shows.hasOwnProperty(k)) {
+            for (let k in shows) {
+                if (shows.hasOwnProperty(k)) {
                     const show = shows[k];
-                    if (movie.shows[show.date]==null) movie.shows[show.date] = [];
+                    if (movie.shows[show.date] == null) movie.shows[show.date] = [];
                     movie.shows[show.date].push({
                         date: show.date,
                         id: show.id,
@@ -38,18 +42,20 @@ function transformMovies(movies) {
             }
             return movie;
         })
-        .map(( {
-            name,
-            desc,
-            duration,
-            genre,
-            id,
-            image,
-            rating,
-            releaseDate,
-            trailer,
-            shows
-        }) => Object.entries(shows)
+        .map(({
+                  name,
+                  desc,
+                  duration,
+                  genre,
+                  id,
+                  image1,
+                  image2,
+                  poster,
+                  rating,
+                  releaseDate,
+                  trailer,
+                  shows
+              }) => Object.entries(shows)
             .map(([date, shows]) => {
                 return {
                     name,
@@ -57,7 +63,9 @@ function transformMovies(movies) {
                     duration,
                     genre,
                     id,
-                    image,
+                    image1,
+                    image2,
+                    poster,
                     rating,
                     releaseDate,
                     trailer,
@@ -81,13 +89,13 @@ function chooseDate(opt) {
             const dateStr = d.getAttribute("date-val");
 
             const content = movies
-                .sort((a,b) => new Date(a.date) - new Date(b.date))
+                .sort((a, b) => new Date(a.date) - new Date(b.date))
                 .filter(movie => {
                     if (dateStr === "null") return true;
                     return movie.date === dateStr;
                 })
-                .map(e=> showElement(dateStr === "null", e))
-                .reduce((a,b) => a+b);
+                .map(e => showElement(dateStr === "null", e))
+                .reduce((a, b) => a + b);
             document.getElementById("all-shows").innerHTML = content;
 
 

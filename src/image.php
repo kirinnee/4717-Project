@@ -1,20 +1,23 @@
 <?php
-
 require_once("./db.php");
-
 $conn = conn();
-
-$id = $_GET["id"];
-if($id == null) {
+if(!isset($_GET["id"]) || $_GET["id"] == "") {
     echo "Not ID";
     exit;
 }
 
-$r = $conn->query("SELECT image FROM Movies WHERE id = '$id'");
+$id = $_GET["id"];
+$type = $_GET["type"];
+
+$r = $conn->query("SELECT * FROM Images WHERE id = '$id'");
 
 if ($r) {
     $row = $r->fetch_assoc();
-    $img = $row["image"];
+    if(!isset($row[$type])) {
+        echo "Not Found";
+        exit;
+    }
+    $img = $row[$type];
     preg_match("/^data:(image\/[a-z]+;)base64,(.*)$/", $img , $match);
     $mime = $match[1];
     $image = $match[2];

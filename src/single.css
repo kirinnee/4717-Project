@@ -1,0 +1,17 @@
+.not-found {
+    width: 100%;
+    height: calc(100vh - 44px);
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    font-family: Poppins, sans-serif;
+}
+
+.part-way {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
