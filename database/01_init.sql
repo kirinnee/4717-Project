@@ -112,7 +112,7 @@ CREATE TRIGGER Seats_AFTER_INSERT
 BEGIN
     DECLARE x INT;
     SET x = 1;
-    WHILE x < 65
+    WHILE x < 69
         DO
             INSERT INTO Seats (show_id, seat_no, status) VALUES (NEW.id, x, 'EMPTY');
             SET x = x + 1;

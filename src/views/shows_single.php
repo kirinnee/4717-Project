@@ -1,12 +1,16 @@
 <html lang="en">
 <?php
 require_once("./classlib/movie.php");
+require_once("./classlib/tickets.php");
 require_once("./db.php");
 $c = function () {
     return conn();
 };
 $movieRepo = new MovieRepo($c);
 $movie = $movieRepo->get($_GET["id"]);
+
+$ttRepo = new TicketTypeRepo($c);
+$tt = $ttRepo->getAll();
 ?>
 <head>
     <link rel="stylesheet" href="single.css"/>
@@ -22,9 +26,14 @@ $movie = $movieRepo->get($_GET["id"]);
             "title",
             "description",
             "showtime",
+            "seating",
+            "ticket_selector",
         ], [
+    ], [
             "showtime",
-        ], []
+            "ticket_selector",
+            "seating",
+        ]
     );
     ?>
 
@@ -37,22 +46,24 @@ $movie = $movieRepo->get($_GET["id"]);
 <body>
 <?php (require("./lib/nav_bar/index.php"))("shows") ?>
 <?php
-    if($movie == null) {
-        echo <<<EOL
+if ($movie == null) {
+    echo <<<EOL
 <div class='not-found'>
-                <div>
-                    Not Found
-                </div>
-            </div>"
+    <div>
+        Not Found
+    </div>
+</div>"
 EOL;
-    } else {
-        (require("./lib/trailer/index.php"))($movie);
-        (require("./lib/title/index.php"))($movie);
-        echo "<div class='part-way'>";
-        (require("./lib/description/index.php"))($movie);
-        (require("./lib/showtime/index.php"))($movie);
-        echo "</div>";
-    }
+} else {
+    (require("./lib/trailer/index.php"))($movie);
+    (require("./lib/title/index.php"))($movie);
+    echo "<form><div class='part-way'>";
+    (require("./lib/description/index.php"))($movie);
+    (require("./lib/showtime/index.php"))($movie);
+    echo "</div>";
+    (require("./lib/seating/index.php"))($movie, $tt);
+    echo "</form>";
+}
 ?>
 <?php require("./lib/footer/index.php") ?>
 </body>

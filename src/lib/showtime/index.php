@@ -16,8 +16,7 @@ return function ($movie) {
     $showsJSON = json_encode($shows);
 
     echo <<<EOL
-    <div class="show-time">
-        <form method="POST" onsubmit="return (()=>{})()">
+    <div class="show-time">>
             <select class="available-date" name="date">
 EOL;
     $flag = false;
@@ -32,11 +31,11 @@ EOL;
             continue;
         }
         if (!$flag) {
-            echo "<option selected value='$k'>$d</option>";
+            echo "<option selected name='date' value='$k'>$d</option>";
             $flag = true;
             $firstDate = $k;
         } else {
-            echo "<option value='$k'>$d</option>";
+            echo "<option name='date' value='$k'>$d</option>";
         }
     }
     echo <<<EOL
@@ -67,7 +66,6 @@ EOL;
     }
     echo <<<EOL
             </table>
-        </form>
     </div>
 EOL;
 }

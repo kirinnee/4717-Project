@@ -2,5 +2,123 @@
     width: 100%;
     color: white;
     font-family: Poppins, sans-serif;
+}
+
+.seating h2 {
+    text-align: center;
+}
+
+.seats {
+    margin: 24px auto;
+}
+
+.row {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.seat {
+    background: #FFFFFF44;
+    width: 7vw;
+    height: 7vw;
+    max-width: 50px;
+    max-height: 50px;
+    margin: 0.1vw;
+    cursor: pointer;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 300;
+    user-select: none;
+    transition: background-color 0.5s;
+}
+
+.seat:hover {
+    background: #FFFFFF66;
+}
+
+.seat.empty {
+    background: transparent;
+    cursor: default;
+}
+
+.seat.taken {
+    background: lightcoral;
+    cursor: not-allowed;
+}
+
+.seat.picked {
+    background: lightsteelblue;
+}
+
+.legends, .legend {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 200;
+}
+
+.legend {
+    margin: 0 8px;
+    flex-direction: column;
+}
+
+.legend-bar {
+    margin: 24px;
+}
+
+.legend-bar h3 {
+    text-align: center;
+    font-weight: 400;
+}
+
+.selectors {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.allocation {
+    padding: 20px;
+    font-size: 20px;
+    font-weight: 300;
+    text-align: center;
+}
+
+.pay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 24px;
+}
+
+
+.cost {
+    margin: 20px;
+    font-size: 18px;
+}
+
+
+.pay .button {
+    border: 3px solid transparent;
+    transition: border 0.3s;
+}
+
+.pay .button:hover {
+    border: 3px solid white;
+}
+
+.pay input[type=submit] {
+    font-family: Poppins, sans-serif;
+    font-weight: 300;
+    padding: 12px 16px;
+    cursor: pointer;
+    border: 1px solid white;
+    background: black;
+    font-size: 16px;
+    color: white;
 
 }

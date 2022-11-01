@@ -1,0 +1,44 @@
+.numeric {
+    display: flex;
+    flex-direction: row;
+    margin: 8px;
+}
+
+.ticket-input {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 12px;
+}
+
+.numeric input {
+    width: 40px;
+    font-size: 16px;
+    padding: 4px;
+    background: #161616;
+    color:white;
+    border: 1px solid white;
+    text-align: center;
+}
+
+.label {
+    width: 150px;
+    text-align: center;
+}
+
+.numeric .minus, .numeric .plus {
+    text-align: center;
+    border: 1px solid #FFFFFF22;
+    width: 30px;
+    background: #FFFFFF22;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.3s;
+    padding: 4px
+
+}
+
+.numeric .minus:hover, .numeric .plus:hover {
+    background: #FFFFFF66;
+}
