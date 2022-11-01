@@ -1,3 +1,4 @@
+<?php require_once("./classlib/auth.php") ?>
 <html>
 <head>
     <?php (require("./lib/head.php"))(

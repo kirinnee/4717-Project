@@ -1,3 +1,4 @@
+<?php require_once("./classlib/auth.php") ?>
 <!DOCTYPE html>
 <html lang="en">
 <?php
@@ -22,7 +23,8 @@ $movies = $movieRepo->getAll();
         "footer",
         "nav_bar",
         "nav_ele",
-        "shows"
+        "shows",
+        "success_panel"
     ], [
         "date_picker",
         "carousel",
@@ -33,6 +35,7 @@ $movies = $movieRepo->getAll();
 </head>
 <body>
 <?php (require("./lib/nav_bar/index.php"))("home") ?>
+<?php (require("./lib/session_message/index.php")) ?>
 <?php
 (require("./lib/carousel/index.php"))([
     $movies['1'],

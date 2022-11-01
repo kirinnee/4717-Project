@@ -1,0 +1,12 @@
+div.success-panel {
+    padding: 8px 12px;
+    border: 1px solid darkgreen;
+    background: lightgreen;
+    color: darkgreen;
+    text-align: center;
+    font-family: Raleway, Poppins, sans-serif;
+    width: 80%;
+    max-width: 600px;
+    margin: 12px auto;
+    border-radius: 8px;
+}

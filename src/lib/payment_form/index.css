@@ -1,0 +1,9 @@
+form.payment-form {
+    color: white;
+    font-family: Poppins, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 40px;
+}

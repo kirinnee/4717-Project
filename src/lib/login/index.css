@@ -1,0 +1,37 @@
+.login {
+    width: 100%;
+    min-height: calc(100vh - 44px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: Poppins, sans-serif;
+}
+
+.login .form-card {
+    width: 90%;
+    max-width: 800px;
+    background: #161616;
+    border-radius: 10px;
+    padding: 20px;
+    border: 1px solid white;
+}
+
+.login h2 {
+    margin: 20px;
+    text-align: center;
+}
+
+.login form.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+}
+.m-s {
+    margin: 8px;
+}
+.m-l {
+    margin: 20px;
+}

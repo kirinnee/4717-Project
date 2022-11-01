@@ -56,7 +56,8 @@ CREATE TABLE Users
     id       int(11)     NOT NULL PRIMARY KEY AUTO_INCREMENT,
     name     varchar(64) NOT NULL,
     email    varchar(64) NOT NULL,
-    password varchar(64) NOT NULL
+    password varchar(64) NOT NULL,
+    UNIQUE (email)
 );
 
 CREATE TABLE TicketType
@@ -69,11 +70,13 @@ CREATE TABLE TicketType
 CREATE TABLE Booking
 (
     id        int(11)        NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    uuid      longtext      NOT NULL,
     user_id   int(11)        NOT NULL,
     seat_id   int(11)        NOT NULL,
     timestamp datetime       NOT NULL,
     cost      decimal(10, 2) NOT NULL,
     ticket_type int(11)      NOT NULL,
+    UNIQUE (uuid),
     FOREIGN KEY (user_id) REFERENCES Users (id),
     FOREIGN KEY (ticket_type) REFERENCES TicketType (id),
     FOREIGN KEY (seat_id) REFERENCES Seats (id)

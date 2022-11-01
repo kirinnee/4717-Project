@@ -11,6 +11,14 @@ return function($page) {
     $navEle("Shows", "shows.php", $page == "shows" ? "selected" : "");
     $navEle("Contact", "contact.php", $page == "contact" ? "selected" : "");
 
+    if(isset($_SESSION["user_id"])) {
+        $navEle("Logout", "logout.php", $page == "logout" ? "selected" : "");
+    } else {
+        $navEle("Sign Up", "register.php", $page == "register" ? "selected" : "");
+        $navEle("Login", "login.php", $page == "login" ? "selected" : "");
+
+    }
+
     echo <<<HEREDOCS
     </div>
     HEREDOCS;

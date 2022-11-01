@@ -6,6 +6,7 @@ require_once("./db.php");
 $c = function () {
     return conn();
 };
+$movieId = $_GET["id"];
 $movieRepo = new MovieRepo($c);
 $movie = $movieRepo->get($_GET["id"]);
 
@@ -57,7 +58,9 @@ EOL;
 } else {
     (require("./lib/trailer/index.php"))($movie);
     (require("./lib/title/index.php"))($movie);
-    echo "<form><div class='part-way'>";
+
+    $movieId = $_GET["id"];
+    echo "<form action='./payment.php?id=$movieId' method='POST'><div class='part-way'>";
     (require("./lib/description/index.php"))($movie);
     (require("./lib/showtime/index.php"))($movie);
     echo "</div>";
