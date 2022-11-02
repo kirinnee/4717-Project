@@ -8,39 +8,71 @@ html {
 	/* background-blend-mode: darken;
 	background-size: cover; */
     height: 500px;
+	position: relative;
+}
+.clip {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border-bottom: 1px solid #55555550;
+	background: #151515;
+	clip-path: polygon(0 70%,100% 30%,100% 100%,0 100%);
+}
+.holder{
+	width: 100%;
+	height: 60vw;
+	position: relative;
 }
 
-
-.box-main {
+.holder .content {
+	position: relative;
+	width: 100%;
 	display: flex;
-    flex-direction: column;
-	justify-content: center;
-	color: whitesmoke;
-	max-width: 100%;
-	min-height: 50vh;
-	overflow: hidden;
+	justify-content: space-evenly;
+	height: 30vw;
+	z-index: 3;
+	align-items: center;
 }
 
-.firstHalf {
-	display: flex;
-    flex-direction: column;
 
-}
-.firstHalf #founder{
-    display:flex;
-    align-items:right;
-    justify-content:space-evenly;
-}
-.firstHalf p{
-    font-size: 90%;
-}
-.firstHalf #team{
-    display:flex;
-    align-items:left;
-    justify-content:space-evenly;
-    flex-direction: row-reverse;
+.holder .content .words{
+	width: 40vw;
+	max-width: 20vw;
 }
 
+.holder .content .big{
+	font-size: 3.5vw;
+	font-family: Cabin, sans-serif;
+}
+
+
+.holder .pictures{
+	position: relative;
+	max-width: 20vw;
+	width: 40vw;
+}
+
+.holder .pictures img {
+	position: relative;
+	width: 40vw;
+	max-width: 20vw;
+}
+
+.holder .content .light{
+	font-size: 3.5vw;
+	font-weight: 200;
+	font-family: Raleway, sans-serif;
+}
+.holder .content .desc {
+	font-size: 1vw;
+	font-weight: 300;
+	font-family: Poppins, sans-serif;
+
+}
+
+.words {
+	color:white;
+}
 
 img{
     max-width:200px;
@@ -70,6 +102,7 @@ h3 {
 	display: flex;
     align-items: center;
     justify-content: center;
+	flex-wrap: wrap;
 }
 #head {
 	background-color: #000000;
