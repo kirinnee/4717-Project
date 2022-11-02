@@ -37,7 +37,7 @@ html {
 
 .holder .content .words{
 	width: 40vw;
-	max-width: 20vw;
+	max-width: 30vw;
 }
 
 .holder .content .big{
@@ -55,7 +55,7 @@ html {
 .holder .pictures img {
 	position: relative;
 	width: 40vw;
-	max-width: 20vw;
+	max-width: 30vw;
 }
 
 .holder .content .light{
@@ -74,10 +74,6 @@ html {
 	color:white;
 }
 
-img{
-    max-width:200px;
-    max-height:300px;
-}
 
 h1 {
 	font-family: 'Poppins', sans-serif;
