@@ -51,6 +51,17 @@
     background: lightsteelblue;
 }
 
+.seats .stage {
+    width: 400px;
+    height: 60px;
+    margin: 20px;
+
+    line-height: 60px;
+    font-weight: 300;
+    text-align: center;
+    background: #FFFFFF44;
+}
+
 .legends, .legend {
     display: flex;
     justify-content: center;

@@ -1,4 +1,10 @@
 <?php
+function isint($number)
+{
+    $number = filter_var($number, FILTER_VALIDATE_INT);
+    return ($number !== FALSE);
+}
+
 function validName($name)
 {
     if (strlen($name) < 2) {
@@ -63,5 +69,69 @@ function validPassword($password)
     return "";
 }
 
+function validCC($cc)
+{
+    if (preg_match("/[^0-9-\s]+/", $cc)) {
+        return "Only digits and '-' accepted";
+    }
 
+    if (!preg_match("/^\d\d\d\d-\d\d\d\d-\d\d\d\d-\d\d\d\d$/", $cc))
+        return "CC needs to be in xxxx-xxxx-xxxx-xxxx format";
+
+    $nCheck = 0;
+    $bEven = false;
+
+    while (preg_match('/\D/', $cc)) {
+        $cc = preg_replace('/\D/', "", $cc);
+    }
+
+    for ($n = strlen($cc) - 1; $n >= 0; $n--) {
+        $cDigit = $cc[$n];
+        $nDigit = intval($cDigit);
+
+        if ($bEven && ($nDigit *= 2) > 9) $nDigit -= 9;
+
+        $nCheck += $nDigit;
+        $bEven = !$bEven;
+    }
+
+    return ($nCheck % 10) == 0 ? "" : "Not a valid Credit Card Number";
+}
+
+function validExpiry($exp)
+{
+    if (count(explode("/", $exp)) !== 2) {
+        return "Format in MM/YY";
+    }
+    $temp = explode("/", $exp);
+    $a = $temp[0];
+    $b = $temp[1];
+    if (!isint($a)) return "MM has to be a valid month in digits";
+    $m = intval($a);
+    if ($m < 1 || $m > 12) return "MM has to be 1 to 12";
+    if (!isint($b)) return "YY has to be a valid year in digits";
+    $yy = intval($b);
+    $cY = intval(date("Y"));
+    $cM = intval(date("m"));
+    if ($yy + 2000 < $cY) {
+        return "The card cannot be expired";
+    } else if ($yy + 2000 > $cY) {
+        return "";
+    } else if ($m < $cM) {
+        return "The card cannot be expired";
+    } else if ($m === $cM) {
+        return "The card expires this month";
+    }
+    return "";
+}
+
+function validCVV($cvv) {
+    if(strlen($cvv) !== 3) {
+        return "CVV is 3 digits long";
+    }
+    if(preg_match("/\D/", $cvv)) {
+        return "CVV only allow digits";
+    }
+    return "";
+}
 ?>

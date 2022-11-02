@@ -63,12 +63,69 @@ function validCC(cc) {
     return (nCheck % 10) == 0 ? "" : "Not a valid Credit Card Number";
 }
 
+function validExpiry(exp) {
+    if(exp.split("/").length !== 2) {
+        return "Format in MM/YY"
+    }
+    const [a,b] = exp.split("/");
+    try {
+        const m = parseInt(a);
+        if(m < 1 || m > 12) {
+            return "MM has to be 1 to 12"
+        }
+        try {
+            const yy = parseInt(b);
+            const now = new Date();
+            const cY = now.getFullYear();
+            const cM = now.getMonth() + 1;
+            if( yy + 2000 < cY) {
+                return "The card cannot be expired"
+            }else if (yy + 2000 > cY) {
+                return "";
+            } else  if(m < cM){
+                return "The card cannot be expired"
+            } else if(m === cM){
+                return "The card expires this month";
+            }
+        }catch {
+            return "YY has to be a valid year in digits"
+        }
+    }catch {
+        return "MM has to be a valid month in digits"
+    }
+    return "";
+}
+
+function validCVV(cvv) {
+    if(cvv.length !== 3) {
+        return "CVV is 3 digits long"
+    }
+    if(cvv.match(/\D/)) {
+        return "CVV only allow digits"
+    }
+    return "";
+}
+
+function limitCVV(ele) {
+    ele.addEventListener("input", ()=> {
+        ele.value = ele.value.split('')
+            .filter(x => x.match(/^\d$/))
+            .join("").substring(0, 3);
+    })
+}
+
 register("#pay-name", validName)
 register("#pay-email", validEmail)
 register("#pay-cc", validCC)
+register("#pay-date", validExpiry)
+register("#pay-cvv", validCVV)
 
-const regValid = validatorBuilder([
+limitCVV(document.querySelector("#pay-cvv input.generic-input"))
+
+const payValid = validatorBuilder([
     ["#pay-name", validName],
     ["#pay-email", validEmail],
     ["#pay-cc", validCC],
+    ["#pay-date", validExpiry],
+    ["#pay-cvv", validCVV],
 ])

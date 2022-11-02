@@ -69,13 +69,13 @@ CREATE TABLE TicketType
 
 CREATE TABLE Booking
 (
-    id        int(11)        NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    uuid      longtext      NOT NULL,
-    user_id   int(11)        NOT NULL,
-    seat_id   int(11)        NOT NULL,
-    timestamp datetime       NOT NULL,
-    cost      decimal(10, 2) NOT NULL,
-    ticket_type int(11)      NOT NULL,
+    id          int(11)        NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    uuid        varchar(13)    NOT NULL,
+    user_id     int(11)        NOT NULL,
+    seat_id     int(11)        NOT NULL,
+    timestamp   datetime       NOT NULL,
+    cost        decimal(10, 2) NOT NULL,
+    ticket_type int(11)        NOT NULL,
     UNIQUE (uuid),
     FOREIGN KEY (user_id) REFERENCES Users (id),
     FOREIGN KEY (ticket_type) REFERENCES TicketType (id),

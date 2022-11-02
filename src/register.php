@@ -1,9 +1,8 @@
 <?php require_once("./classlib/auth.php") ?>
+<?php publicPage("index.php") ?>
 <!DOCTYPE html>
 <html lang="en">
-<?php
-require_once("./db.php");
-?>
+<?php require_once("./db.php") ?>
 <head>
     <?php (require("./lib/head.php"))(
         "Projectionist - Auth", [

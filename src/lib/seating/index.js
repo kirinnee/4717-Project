@@ -34,8 +34,10 @@ function seating() {
                 e.classList.remove("taken")
                 e.classList.remove("picked")
                 const show = shows.shows[chosen];
-                const empty = Object.entries(show.seats)
-                    .map(([k,v])=>v)
+                const seatArr = Object.entries(show.seats)
+                    .map(([k,v])=>v);
+                e.setAttribute("seatId", seatArr.find(v=> v.no === e.innerText ).id);
+                const empty = seatArr
                     .some(v => v.no === e.innerText && v.status === "EMPTY");
                 if(!empty) {
                     e.classList.add("taken");
@@ -50,18 +52,31 @@ function seating() {
         reset(c);
     });
 
+    const seatTracker = $$("#seat-tracker");
     // register clicks
     $$$(".seats .seat").forEach(e => {
+
         e.addEventListener("click", () => {
             if(![...e.classList].includes("taken")) {
-                if([...e.classList].includes("picked")) {
-                    e.classList.remove("picked");
-                    capacity--;
-                } else {
-                    e.classList.add("picked");
-                    capacity++;
+                try {
+                    const seatNumber = parseInt(e.innerText);
+                    const seatId = parseInt(e.getAttribute("seatId"));
+                    let current = JSON.parse(seatTracker.value);
+                    if([...e.classList].includes("picked")) {
+                        e.classList.remove("picked");
+                        capacity--;
+                        current = current.filter(x => x.no !== seatNumber );
+                    } else {
+                        e.classList.add("picked");
+                        capacity++;
+                        current.push({id: seatId, no: seatNumber})
+                    }
+                    seatTracker.value = JSON.stringify(current.sort((a,b) => a.no - b.no));
+                    updateCap(capacity);
+                }catch {
+
                 }
-                updateCap(capacity);
+
             }
         });
     })

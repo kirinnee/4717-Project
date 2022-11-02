@@ -1,0 +1,18 @@
+table.payment-overview {
+    margin: 20px auto;
+    color: white;
+    border: 1px solid white;
+    font-family: Poppins, sans-serif;
+    border-collapse: collapse;
+}
+
+table.payment-overview td {
+    padding: 8px 12px;
+    text-align: center;
+    border: 1px solid white;
+}
+
+table.payment-overview td.first {
+    text-align: left;
+    width: 300px;
+}

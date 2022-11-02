@@ -1,9 +1,14 @@
-div.payment-form {
+
+.box {
+    width: 100%;
+    height: calc(100vh - 44px);
     color: white;
     font-family: Poppins, sans-serif;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 40px;
+}
+
+.thank-you {
+    font-size: 24px;
 }

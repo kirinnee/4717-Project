@@ -100,6 +100,12 @@ return function ($movie, $tickets) {
                 <div class="seat">68</div>
             </div>
 
+            <div class="row">
+                <div class="stage">
+                    Stage
+                </div>
+            </div>
+            <input style="display: none;" name="seats" value="[]" id="seat-tracker"/>
         </div>
         <div class="legend-bar">
             <h3>Legend</h3>
