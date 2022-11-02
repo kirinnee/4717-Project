@@ -1,6 +1,6 @@
 <?php require_once("./classlib/auth.php") ?>
 <?php privatePage("login.php") ?>
-<?php require_once("./classlib/transact.php") ?>;
+<?php require_once("./classlib/transact.php") ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -7,18 +7,17 @@ $c = function () {
     return conn();
 };
 $bRepo = new BookingRepo($c);
-$booking = $bRepo->geByUserId(getUserId());
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="payment_success.css">
+    <link rel="stylesheet" href="ticket.css">
     <?php (require("./lib/head.php"))(
         "Projectionist - My Bookings", [
         "footer",
         "nav_bar",
         "nav_ele",
-            "bookings",
+        "etix",
     ], [
     ], [
     ]);
@@ -26,7 +25,23 @@ $booking = $bRepo->geByUserId(getUserId());
 </head>
 <body>
 <?php (require("./lib/nav_bar/index.php"))("book") ?>
-<?php (require("./lib/bookings/index.php"))($booking) ?>
+<div class="full-size f-center">
+    <?php
+    if (isset($_GET['id'])) {
+        $tix = $bRepo->get($_GET['id']);
+        if ($tix == null) {
+            echo "<div class='not-found'>No Ticket Found</div>";
+        } else if ($tix->userId != getUserId()) {
+            echo "<div class='not-found'>No Ticket Found</div>";
+        } else {
+            (require("./lib/etix/index.php"))($tix);
+
+        }
+    } else {
+        echo "<div class='not-found'>No Ticket Found</div>";
+    }
+    ?>
+</div>
 
 <?php require("./lib/footer/index.php") ?>
 </body>

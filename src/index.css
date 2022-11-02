@@ -2,3 +2,15 @@ body {
     margin: 0;
     background: #000000;
 }
+
+
+.full-size {
+    width: 100%;
+    height: calc(100vh - 44px);
+}
+
+.f-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

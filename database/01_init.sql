@@ -70,7 +70,7 @@ CREATE TABLE TicketType
 CREATE TABLE Booking
 (
     id          int(11)        NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    uuid        varchar(13)    NOT NULL,
+    uuid        varchar(23)    NOT NULL,
     user_id     int(11)        NOT NULL,
     seat_id     int(11)        NOT NULL,
     timestamp   datetime       NOT NULL,
