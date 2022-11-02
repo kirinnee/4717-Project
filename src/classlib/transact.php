@@ -43,16 +43,37 @@ $c = function () {
     return conn();
 };
 
-function book($userId, $seatId, $tCost, $ticketId)
+function book($userId, $seatId, $tCost, $ticketId, $e, $n)
 {
     $conn = conn();
     $uuid = uniqid('', true);
     $r = $conn->query("INSERT INTO Booking (user_id, uuid, seat_id, timestamp, cost, ticket_type) VALUES ('$userId', '$uuid', '$seatId', UTC_TIMESTAMP(), '$tCost' , '$ticketId' )");
     if (!$r) {
         $conn->close();
-        return $conn->error;
+        return [$conn->error, ""];
     }
-    return "";
+
+    $r1 = $conn->query("SELECT id FROM Booking WHERE uuid ='$uuid'");
+    if($r1) {
+        $row = $r1->fetch_assoc();
+        $id =$row['id'];
+        $message = <<<EOL
+    <div style="background: black;">
+        <h1 style="color: white">Projectionist Tickets</h1>
+        <div>Hello $n!</div>
+        <div style="color: white">Thank you for choosing projectionist!</div>
+        <div style="color: white">You can view your tickets <a href="http://ernest.devbox.tr8.io:3000/ticket.php?id=$id">here</a></div>
+</div>
+EOL;
+
+        $headers = 'From: projectionist@localhost' . "\r\n" .
+            'Reply-To: projectionist@localhost' . "\r\n" .
+            'X-Mailer: PHP/' .phpversion();
+        mail($e, "Projectionist Ticket", "", $headers, '-projectionist@localhost');
+    }
+
+
+    return ["", $uuid];
 }
 
 $ttRepo = new TicketTypeRepo($c);
@@ -67,9 +88,9 @@ foreach ($tt as $t) {
             $count++;
             while ($q > 0) {
                 $seat = array_shift($seatArr);
-                $r = book($uid, $seat, $t->cost, $t->id);
-                if ($r != "") {
-                    $error[] = $r;
+                $r = book($uid, $seat, $t->cost, $t->id, $e, $n);
+                if ($r[0] != "") {
+                    $error[] = $r[0];
                     $_SESSION['errors'] = $error;
                     header("Location: login.php");
                     exit();

@@ -22,6 +22,16 @@ EOL;
         echo <<<EOL
 <div class="slide">
       <img src="$m->image1" alt="Image" />
+      <div class="metadata">
+        <div class="header">$m->name</div>
+        <div class="content">$m->desc</div>
+        <div class="action-bar">
+            <div class="button-wrapper">
+                <a class="button" href="shows.php?id=$m->id">WATCH NOW</a>
+            </div>
+        </div>
+
+    </div>
 </div>
 EOL;
     }

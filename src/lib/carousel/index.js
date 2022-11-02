@@ -50,7 +50,7 @@ function carousel(numberOfImages, id) {
                 }
             })
             jumper();
-        }, 1000);
+        }, 10000);
 
     }
 

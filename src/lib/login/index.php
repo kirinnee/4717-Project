@@ -8,6 +8,9 @@
                 <?php (require("./lib/button/index.php"))("submit","m-l","LOGIN", "") ?>
             </div>
         </form>
+        <div class="prompt">
+            Not a member? <a href="./register.php">Create an account</a>
+        </div>
     </div>
 
 </div>

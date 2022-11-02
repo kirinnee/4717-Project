@@ -22,6 +22,9 @@
     text-align: center;
 }
 
+.login .prompt {
+    text-align: center;
+}
 .login form.form {
     display: flex;
     flex-direction: column;

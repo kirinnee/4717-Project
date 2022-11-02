@@ -253,3 +253,56 @@
     background-color: transparent;
     border: 1px solid white;
 }
+
+.carousel .slide .metadata{
+    position: absolute;
+    right:10%;
+    bottom: 10%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-family: Raleway, Poppins, sans-serif;
+    padding: 12px;
+    max-width: 30%;
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
+}
+
+.carousel .slide .metadata .header {
+    font-size: 24px;
+}
+.carousel .slide .metadata .content {
+    text-align: justify;
+    margin: 12px;
+    font-size: 12px;
+}
+
+.carousel .slide .metadata .button-wrapper {
+    text-align: justify;
+    border: 3px solid transparent;
+    font-size: 12px;
+    transition: border 0.3s;
+    cursor: pointer;
+    user-select: none;
+}
+
+.carousel .slide .metadata .button-wrapper:hover {
+    border: 3px solid white;
+}
+.carousel .slide .metadata .button-wrapper .button {
+    font-size: 12px;
+    border: 1px solid white;
+    display: block;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: white;
+}
+
+.carousel .slide .metadata .action-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}

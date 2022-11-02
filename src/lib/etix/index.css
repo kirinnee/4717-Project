@@ -17,6 +17,10 @@
     font-family: Raleway, Poppins, sans-serif;
     margin: 4px;
     color: #CDCDCD;
+    display: flex;
+    width: 220px;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .tix .serial-number {

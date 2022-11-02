@@ -6,6 +6,10 @@ table.payment-overview {
     border-collapse: collapse;
 }
 
+table.payment-overview th {
+    padding: 8px 12px;
+}
+
 table.payment-overview td {
     padding: 8px 12px;
     text-align: center;

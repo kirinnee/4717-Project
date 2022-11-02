@@ -1,8 +1,11 @@
 .nav-ele-header {
+    display: block;
     background-color: black;
     padding: 12px 24px;
     transition: all 0.2s;
     color: white;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 .selected{
@@ -15,8 +18,8 @@
     font-size: 16px;
 }
 
-.selected .nav-ele-header:hover {
-    background: #FFFFFF88;
+.selected.nav-ele-header:hover {
+    background: #FFFFFFDD;
 
 }
 

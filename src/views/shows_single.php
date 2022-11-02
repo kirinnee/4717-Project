@@ -60,7 +60,7 @@ EOL;
     (require("./lib/title/index.php"))($movie);
 
     $movieId = $_GET["id"];
-    echo "<form action='./payment.php?id=$movieId' method='POST'><div class='part-way'>";
+    echo "<form action='./payment.php?id=$movieId' onsubmit='return ticketValid()' method='POST'><div class='part-way'>";
     (require("./lib/description/index.php"))($movie);
     (require("./lib/showtime/index.php"))($movie);
     echo "</div>";

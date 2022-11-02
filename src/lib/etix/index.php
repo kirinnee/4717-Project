@@ -8,7 +8,12 @@ return function ($booking) {
             $booking->movieName
         </div>
         <div class="type">
-            $tt
+        <div>
+        $tt
+        </div>
+        <div>
+        SEAT: $booking->seatNo
+        </div>
         </div>
         <div class="serial-number">
             Ticket Number: $booking->uuid

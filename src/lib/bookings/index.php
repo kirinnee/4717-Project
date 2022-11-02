@@ -24,8 +24,8 @@ EOL;
 
             $bought->setTimezone($sgTime);
 
-            $bo = $bought->format("m d Y, H:i A");
-            $stD = $show->format("m d Y");
+            $bo = $bought->format("d M Y, H:i A");
+            $stD = $show->format("d M Y");
             $stT = $show->format("H:i A");
 
             echo <<<EOL

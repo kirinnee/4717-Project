@@ -92,4 +92,9 @@ function seating() {
     }
 }
 
-seating();
+const getStats = seating();
+
+function ticketValid() {
+    const stats = getStats.getStats();
+    return stats.capacity === stats.consumed;
+}
