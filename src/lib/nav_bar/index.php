@@ -12,7 +12,7 @@ return function($page) {
     $navEle("Contact", "contact.php", $page == "contact" ? "selected" : "");
 
     if(isset($_SESSION["user_id"])) {
-        $navEle("My Bookings", "bookings.php", $page == "book" ? "selected" : "");
+        $navEle("History", "bookings.php", $page == "book" ? "selected" : "");
         $navEle("Logout", "logout.php", $page == "logout" ? "selected" : "");
     } else {
         $navEle("Sign Up", "register.php", $page == "register" ? "selected" : "");

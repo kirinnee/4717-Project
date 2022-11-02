@@ -32,5 +32,23 @@
     text-decoration: none;
     color: white;
     font-size: 16px;
+}
 
+
+@media only screen and (max-width: 600px) {
+    .nav-ele-header {
+        padding: 12px 8px;
+    }
+
+    .selected{
+        background-color: white;
+    }
+
+    .selected .nav-ele-link {
+        font-size: 14px;
+    }
+
+    .nav-ele-link {
+        font-size: 14px;
+    }
 }

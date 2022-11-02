@@ -1,3 +1,11 @@
+function getWidth() {
+    return Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
+}
+
+function isMobile() {
+    return getWidth() < 600;
+}
+
 function carousel(numberOfImages, id) {
 
 
@@ -20,7 +28,7 @@ function carousel(numberOfImages, id) {
                 e.classList.remove("cslide");
             }
         })
-        ele.style.left = `${10 - current * 80}%`
+        ele.style.left = isMobile() ? `${0 - current * 100}%`: `${10 - current * 80}%`;
 
 
 
@@ -58,7 +66,7 @@ function carousel(numberOfImages, id) {
     return {
         init : function (){
             const ele = getEle();
-            ele.style.width = `${numberOfImages * 80}%`;
+            ele.style.width = isMobile() ? `${numberOfImages * 100}%` : `${numberOfImages * 80}%`;
             moveTo(0);
             jumper();
         },

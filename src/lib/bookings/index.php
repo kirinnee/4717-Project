@@ -4,14 +4,14 @@ return function ($bookings) {
         echo <<<EOL
     <table class="history">
     <tr>
-        <th>Serial</th>
-        <th>Ticket Type</th>
+        <th class="mh">Serial</th>
+        <th class="mh">Ticket Type</th>
         <th>Seat Number</th>
-        <th>Bought</th>
+        <th class="mh">Bought</th>
         <th>Movie</th>
         <th>Date</th>
         <th>Time</th>
-        <th>Location</th>
+        <th class="mh">Location</th>
         <th>More Info</th>
     </tr>
 EOL;
@@ -30,14 +30,14 @@ EOL;
 
             echo <<<EOL
         <tr>
-        <td>$b->uuid</td>
-        <td>$b->ticketTypeName</td>
+        <td class="mh">$b->uuid</td>
+        <td class="mh">$b->ticketTypeName</td>
         <td>$b->seatNo</td>
-        <td>$bo</td>
+        <td class="mh">$bo</td>
         <td><a href="shows.php?id=$b->movieId">$b->movieName</a></td>
         <td>$stD</td>
         <td>$stT</td>
-        <td>$b->theatreName</td>
+        <td class="mh">$b->theatreName</td>
         <td><a href="ticket.php?id=$b->id">View e-Ticket</a></td>
 </tr>
 EOL;

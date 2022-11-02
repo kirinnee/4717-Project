@@ -306,3 +306,75 @@
     align-items: center;
 
 }
+
+@media only screen and (max-width: 600px) {
+    .carousel .slider {
+        width: 100%;
+        max-width: 1200px;
+        height: 100%;
+    }
+
+    .carousel {
+        padding: 24px 0;
+        height: 250px;
+    }
+
+    .carousel .pre {
+        display: none;
+    }
+    .carousel .post {
+        display: none;
+    }
+
+    .carousel .slider .real {
+        left: 0;
+    }
+
+    .carousel .slider .slide {
+        margin: 0 8px;
+    }
+
+    .carousel .control {
+        height: 18px;
+        bottom: 10px;
+    }
+
+    .carousel .control .radio {
+        height: 18px;
+        width: 18px;
+    }
+
+    .carousel .control .radio:hover .radio-display-inner, .carousel .control .radio.cslide .radio-display-inner {
+        height: 12px;
+        width: 12px;
+    }
+
+    .carousel .control .radio .radio-display-outer {
+        height: 18px;
+        width: 18px;
+    }
+
+    .carousel .slide .metadata{
+        right: 5%;
+        bottom: 15%;
+        padding: 8px;
+        max-width: 30%;
+    }
+
+    .carousel .slide .metadata .header {
+        font-size: 16px;
+        margin: 8px;
+    }
+    .carousel .slide .metadata .content {
+        display: none;
+    }
+
+    .carousel .slide .metadata .button-wrapper {
+        text-align: center;
+        border: 2px solid transparent;
+    }
+
+    .carousel .slide .metadata .button-wrapper:hover {
+        border: 2px solid white;
+    }
+}

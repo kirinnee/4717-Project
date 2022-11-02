@@ -32,3 +32,49 @@ table.history tr:nth-child(odd) {
     text-align: center;
     margin: 64px;
 }
+
+
+@media only screen and (max-width: 600px) {
+    .page-controller {
+        overflow-x: auto;
+    }
+    table.history {
+        margin: 24px auto;
+        text-align: center;
+        color: white;
+        font-family: Poppins, sans-serif;
+        border: 0 solid white;
+    }
+
+
+    table.history .mh {
+        display :none;
+    }
+    table.history td {
+        font-size: 12px;
+        padding: 4px;
+        font-weight: 300;
+        border: 0 solid white;
+    }
+
+    table.history a {
+        color: white;
+    }
+
+    table.history th {
+        font-size: 12px;
+        padding: 8px;
+        border: 0 solid white;
+    }
+
+    table.history tr:nth-child(odd) {
+        background-color: #1e1e1e;
+    }
+
+    .no-booking {
+        font-size: 24px;
+        color: white;
+        text-align: center;
+        margin: 64px;
+    }
+}

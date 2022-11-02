@@ -3,8 +3,7 @@ return function($movie) {
     echo <<<EOL
     <div class="trailer-holder">
         <iframe
-            width="800"
-            height="450"
+        class="iframe"
             src="$movie->trailer"
             title="YouTube video player"
             frameborder="0"

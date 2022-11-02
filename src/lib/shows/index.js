@@ -26,6 +26,7 @@ function showElement(showDate, movie) {
         </div>
          <div class="description">
             <div class="title">${movie.name}</div>
+            <div class="m-date">${(new Date(movie.date)).toLocaleDateString("en-US", {month: "short", day: "numeric", weekday: "short"})}</div>
             <div class="desc">
                 ${movie.desc}
             </div>

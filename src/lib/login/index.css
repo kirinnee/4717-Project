@@ -38,3 +38,24 @@
 .m-l {
     margin: 20px;
 }
+
+@media only screen and (max-width: 600px) {
+
+
+    .login .form-card {
+        width: 100%;
+        background: black;
+        border-radius: 0;
+        padding: 0;
+        border: 0;
+    }
+
+    .login h2 {
+        margin: 20px;
+        text-align: center;
+    }
+
+
+
+
+}

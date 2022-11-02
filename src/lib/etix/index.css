@@ -43,3 +43,10 @@
     color: #CDCDCD;
     font-size: 14px;
 }
+
+
+@media only screen and (max-width: 600px) {
+    .tix .bar-code {
+        font-size: 28px;
+    }
+}

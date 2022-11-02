@@ -8,31 +8,39 @@ div.generic-input-holder {
 }
 
 div.generic-input-holder input.generic-input {
-    margin: 0 8px;
+    margin: 0;
     padding: 8px 12px;
     background: transparent;
     border: 1px solid white;
     border-radius: 4px;
     width: 250px;
     color: white;
-    font-size: 12px;
-
+    font-size: 16px;
 }
 
 div.generic-input-holder .generic-error {
     font-size: 12px;
     color: lightcoral;
-    margin: 0 8px;
+    margin: 4px 0;
     width: 250px;
     opacity: 0;
 
 }
 
 div.generic-input-holder .generic-label {
-    width: 180px;
-    text-align: right;
+    font-size: 12px;
+    text-align: left;
 }
 
 div.generic-input-holder .generic-check {
     opacity: 0;
+    font-size: 18px;
+    padding: 8px 4px;
+
+}
+
+div.generic-input-holder .generic-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

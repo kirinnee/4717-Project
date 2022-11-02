@@ -42,3 +42,14 @@
 .numeric .minus:hover, .numeric .plus:hover {
     background: #FFFFFF66;
 }
+
+@media only screen and (max-width: 600px) {
+
+
+    .label {
+        width: 100px;
+        text-align: center;
+    }
+
+
+}

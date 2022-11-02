@@ -1,5 +1,12 @@
 const searchBar = document.getElementById("search");
 const genreChoice = document.getElementById("selector");
+function getWidth() {
+    return Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
+}
+
+function isMobile() {
+    return getWidth() < 600;
+}
 
 function match(first, second) {
     first = first.toLowerCase();
@@ -18,14 +25,22 @@ function filterShows() {
             ) {
                 count++;
                 ele.style.margin = "16px";
-                ele.style.width = "400px";
                 ele.style.opacity = "1";
                 ele.style.borderWidth = "4px";
+                if(isMobile()) {
+                    ele.style.display = "flex";
+                }else {
+                    ele.style.width = "400px";
+                }
             } else {
                 ele.style.margin = "0";
-                ele.style.width = "0";
                 ele.style.opacity = "0";
                 ele.style.borderWidth = "0";
+                if(isMobile()) {
+                    ele.style.display = "none";
+                }else {
+                    ele.style.width = "0";
+                }
             }
         }
     }
