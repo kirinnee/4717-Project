@@ -2,9 +2,10 @@
     <body>
     <div class="contact">
         <div class="box-main">
-            <h1>Contact Us</h1>
+
             <h3>About us</h3>
-            <div class="firstHalf">       
+
+            <div class="firstHalf">
                 <div id="founder">
                     <img src=".\lib\images\stock-founder.jpg" alt="Picture_1">
                     <h3>The Founders</h3>

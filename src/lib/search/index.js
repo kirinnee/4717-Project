@@ -44,3 +44,16 @@ genreChoice.addEventListener("input", () => {
 searchBar.addEventListener("input", () => {
     filterShows();
 });
+
+const params = new Proxy(new URLSearchParams(window.location.search), {
+    get: (searchParams, prop) => searchParams.get(prop),
+});
+
+if(params.genre != null) {
+    setTimeout(()=>{
+        const select = document.querySelector("#selector");
+        select.value = params.genre;
+        select.dispatchEvent(new Event("input"));
+
+    },1)
+}

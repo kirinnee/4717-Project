@@ -92,11 +92,12 @@ function chooseDate(opt) {
                 .sort((a, b) => new Date(a.date) - new Date(b.date))
                 .filter(movie => {
                     const today = new Date();
+                    today.setHours(0,0,0);
                     const sevenDays = new Date(today);
                     sevenDays.setDate(sevenDays.getDate() + 7);
                     const mDate = new Date(movie.date);
                     console.log(today, sevenDays, mDate);
-                    if (dateStr === "null") return  mDate >= today && mDate <= sevenDays ;
+                    if (dateStr === "null") return  mDate >= today && mDate < sevenDays ;
                     return movie.date === dateStr;
                 })
                 .map(e => showElement(dateStr === "null", e))

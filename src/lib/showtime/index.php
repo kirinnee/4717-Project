@@ -60,7 +60,7 @@ EOL;
                 <tr>
                     <td>$loc</td>
                     <td>$time</td>
-                    <td><input type="radio" $selected name="show" value="$v->id"></td>
+                    <td><input type="radio" $selected name="show" show="$v->id" value="$v->id"></td>
                 </tr>
         EOL;
     }

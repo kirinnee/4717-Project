@@ -10,9 +10,9 @@ EOL;
         foreach ($movie->genre as $v) {
             $upper = strtoupper($v->name);
             echo <<<EOL
-        <div class="genre">
+        <a class="genre" href="shows.php?genre=$v->name">
             $upper
-        </div>
+        </a>
 EOL;
 
         }

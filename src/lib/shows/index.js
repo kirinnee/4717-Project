@@ -13,7 +13,7 @@ function showElement(showDate, movie) {
 
     const times = movie.shows
         .map(show =>
-            `<a class="action">
+            `<a class="action" href="shows.php?id=${movie.id}&sd=${show.date}&sid=${show.id}">
                 Book Now! <br>
                 ${show.time}@${show.theatre.name}
             </a>`

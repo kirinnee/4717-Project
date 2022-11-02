@@ -36,7 +36,6 @@ function showTimes() {
     registerRadios();
 
 
-
     return {
         register,
     }
@@ -73,6 +72,7 @@ function generateElements(shows) {
         if (i === 0) radioI.setAttribute("checked", "true");
         radioI.setAttribute("type", "radio");
         radioI.setAttribute("name", "show");
+        radioI.setAttribute("show", show.id);
         radioI.setAttribute("value", show.id);
         return row;
     })
@@ -80,3 +80,19 @@ function generateElements(shows) {
 }
 
 const showTime = showTimes()
+
+
+const params = new Proxy(new URLSearchParams(window.location.search), {
+    get: (searchParams, prop) => searchParams.get(prop),
+});
+
+if (params.sd != null && params.sid) {
+    setTimeout(() => {
+        const select = document.querySelector("select.available-date");
+        select.value = params.sd;
+        select.dispatchEvent(new Event("input"));
+        select.dispatchEvent(new Event("change"));
+
+        document.querySelector(`input[name=show][show='${params.sid}']`).click()
+    }, 1);
+}
