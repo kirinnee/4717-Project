@@ -14,3 +14,9 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+.page-controller {
+    height: calc(100vh - 44px);
+    overflow-y: auto;
+    overflow-x: hidden;
+}

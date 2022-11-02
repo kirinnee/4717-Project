@@ -26,8 +26,11 @@ $booking = $bRepo->geByUserId(getUserId());
 </head>
 <body>
 <?php (require("./lib/nav_bar/index.php"))("book") ?>
-<?php (require("./lib/bookings/index.php"))($booking) ?>
+<div class="page-controller">
+    <?php (require("./lib/bookings/index.php"))($booking) ?>
 
-<?php require("./lib/footer/index.php") ?>
+    <?php require("./lib/footer/index.php") ?>
+</div>
+
 </body>
 </html>

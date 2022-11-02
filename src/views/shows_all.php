@@ -29,12 +29,14 @@ $movies = $movieRepo->getAll();
 </head>
 <body>
 <?php (require("./lib/nav_bar/index.php"))("shows") ?>
+<div class="page-controller">
+    <?php (require("./lib/search/index.php")) ?>
+    <div class="no-shows-found" id="no-shows-found">No Shows found</div>
+    <div class="shows" id="shows">
 
-<?php (require("./lib/search/index.php")) ?>
-<div class="no-shows-found" id="no-shows-found">No Shows found</div>
-<div class="shows" id="shows">
+    </div>
+    <?php require("./lib/footer/index.php") ?>
 
 </div>
-<?php require("./lib/footer/index.php") ?>
 </body>
 </html>

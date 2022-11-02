@@ -46,28 +46,31 @@ $tt = $ttRepo->getAll();
 </head>
 <body>
 <?php (require("./lib/nav_bar/index.php"))("shows") ?>
-<?php
-if ($movie == null) {
-    echo <<<EOL
+<div class="page-controller">
+    <?php
+    if ($movie == null) {
+        echo <<<EOL
 <div class='not-found'>
     <div>
         Not Found
     </div>
 </div>"
 EOL;
-} else {
-    (require("./lib/trailer/index.php"))($movie);
-    (require("./lib/title/index.php"))($movie);
+    } else {
+        (require("./lib/trailer/index.php"))($movie);
+        (require("./lib/title/index.php"))($movie);
 
-    $movieId = $_GET["id"];
-    echo "<form action='./payment.php?id=$movieId' onsubmit='return ticketValid()' method='POST'><div class='part-way'>";
-    (require("./lib/description/index.php"))($movie);
-    (require("./lib/showtime/index.php"))($movie);
-    echo "</div>";
-    (require("./lib/seating/index.php"))($movie, $tt);
-    echo "</form>";
-}
-?>
-<?php require("./lib/footer/index.php") ?>
+        $movieId = $_GET["id"];
+        echo "<form action='./payment.php?id=$movieId' onsubmit='return ticketValid()' method='POST'><div class='part-way'>";
+        (require("./lib/description/index.php"))($movie);
+        (require("./lib/showtime/index.php"))($movie);
+        echo "</div>";
+        (require("./lib/seating/index.php"))($movie, $tt);
+        echo "</form>";
+    }
+    ?>
+    <?php require("./lib/footer/index.php") ?>
+</div>
+
 </body>
 </html>

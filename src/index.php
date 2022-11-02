@@ -35,18 +35,22 @@ $movies = $movieRepo->getAll();
 </head>
 <body>
 <?php (require("./lib/nav_bar/index.php"))("home") ?>
-<?php (require("./lib/session_message/index.php")) ?>
-<?php
-(require("./lib/carousel/index.php"))([
-    $movies['1'],
-    $movies['2'],
-    $movies['3'],
-    $movies['4'],
-], "real1");
-?>
-<?php (require("./lib/date_picker/index.php"))() ?>
-<?php require("./lib/shows/index.php") ?>
-<?php require("./lib/footer/index.php") ?>
+
+<div class="page-controller">
+    <?php (require("./lib/session_message/index.php")) ?>
+    <?php
+    (require("./lib/carousel/index.php"))([
+        $movies['1'],
+        $movies['2'],
+        $movies['3'],
+        $movies['4'],
+    ], "real1");
+    ?>
+    <?php (require("./lib/date_picker/index.php"))() ?>
+    <?php require("./lib/shows/index.php") ?>
+    <?php require("./lib/footer/index.php") ?>
+</div>
+
 <script>
     chooseDate(1);
 </script>
