@@ -35,6 +35,17 @@ try {
         $success = array();
         $success[] = "Successfully registered user!";
         $_SESSION['success'] = $success;
+        if(isset($_POST['redirect'])) {
+            $append = "";
+            foreach ($_POST as $k => $v) {
+                if($k != "email" && $k != "pw" && $k != "name" && $k != "pw-r" )
+                    $append .= "$k=$v&";
+            }
+            header("Location: login.php?$append");
+            exit();
+        }
+
+
         header("Location: login.php");
         exit();
 
