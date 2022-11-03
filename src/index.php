@@ -24,7 +24,8 @@ $movies = $movieRepo->getAll();
         "nav_bar",
         "nav_ele",
         "shows",
-        "success_panel"
+        "success_panel",
+        "error_panel",
     ], [
         "date_picker",
         "carousel",
@@ -35,6 +36,10 @@ $movies = $movieRepo->getAll();
 </head>
 <body>
 <?php (require("./lib/nav_bar/index.php"))("home") ?>
+<?php
+    $a = intval("05");
+    echo "<div style='color: white;'>$a</div>";
+?>
 
 <div class="page-controller">
     <?php (require("./lib/session_message/index.php")) ?>

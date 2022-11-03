@@ -58,18 +58,22 @@ function book($userId, $seatId, $tCost, $ticketId, $e, $n)
         $row = $r1->fetch_assoc();
         $id =$row['id'];
         $message = <<<EOL
-    <div style="background: black;">
-        <h1 style="color: white">Projectionist Tickets</h1>
-        <div>Hello $n!</div>
-        <div style="color: white">Thank you for choosing projectionist!</div>
-        <div style="color: white">You can view your tickets <a href="http://ernest.devbox.tr8.io:3000/ticket.php?id=$id">here</a></div>
-</div>
+        
+        Projectionist Tickets
+        
+        Hello $n!
+        
+        Thank you for choosing projectionist!
+
+        You can view your tickets http://localhost:8000/er0001ng/Documents/4717-Project/src/ticket.php?id=$id
 EOL;
 
-        $headers = 'From: projectionist@localhost' . "\r\n" .
-            'Reply-To: projectionist@localhost' . "\r\n" .
+
+
+        $headers = 'From: f32ee@localhost' . "\r\n" .
+            'Reply-To: f32ee@localhost' . "\r\n" .
             'X-Mailer: PHP/' .phpversion();
-        mail($e, "Projectionist Ticket", "", $headers, '-projectionist@localhost');
+        mail($e, "Projectionist Ticket", $message, $headers, '-f32ee@localhost');
     }
 
 
@@ -88,7 +92,7 @@ foreach ($tt as $t) {
             $count++;
             while ($q > 0) {
                 $seat = array_shift($seatArr);
-                $r = book($uid, $seat, $t->cost, $t->id, $e, $n);
+                $r = book($uid, $seat, $t->cost, $t->id, "f32ee@localhost", $n);
                 if ($r[0] != "") {
                     $error[] = $r[0];
                     $_SESSION['errors'] = $error;

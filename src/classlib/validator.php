@@ -106,7 +106,10 @@ function validExpiry($exp)
     $temp = explode("/", $exp);
     $a = $temp[0];
     $b = $temp[1];
-    if (!isint($a)) return "MM has to be a valid month in digits";
+    if($a[0] === '0') {
+        $a = substr($a, 1);
+    }
+    // if (!isint($a)) return "MM has to be a valid month in digits";
     $m = intval($a);
     if ($m < 1 || $m > 12) return "MM has to be 1 to 12";
     if (!isint($b)) return "YY has to be a valid year in digits";

@@ -34,7 +34,7 @@ try {
                     if($k != "email" && $k != "password")
                         $append .= "$k=$v&";
                 }
-                header("Location: $rd?$append");
+                header("Location: $rd&$append");
                 exit();
             }
             header("Location: shows.php");

@@ -15,6 +15,9 @@ function showElement(movie) {
     <div class="genre">
         <div>${genres}</div>
     </div>
+    <div class="duration-rating">
+        Duration: ${movie.duration} minutes
+    </div>
     <div class="title">
         <div>${movie.name.toUpperCase()}</div>
     </div>

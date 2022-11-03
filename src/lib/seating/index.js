@@ -28,6 +28,7 @@ function seating() {
         display.innerText = `Unallocated Seats: ${capacity - consumed}`
     }
 
+    const seatTracker = $$("#seat-tracker");
     function reset(chosen) {
 
         $$$(".seats .seat").forEach(e => {
@@ -47,13 +48,13 @@ function seating() {
 
         })
         updateCap(0);
+        seatTracker.value = JSON.stringify([]);
     }
 
     showTime.register((c) => {
         reset(c);
     });
 
-    const seatTracker = $$("#seat-tracker");
     // register clicks
     $$$(".seats .seat").forEach(e => {
 
@@ -106,7 +107,9 @@ function seating() {
     if (params.seats != null) {
         const seatArr = JSON.parse(params.seats);
         seatArr.forEach(e => {
-            $$(`div.seat[seatid='${e.id}']`).click();
+            setTimeout(()=> {
+                $$(`div.seat[seatid='${e.id}']`).click();
+            },1);
         })
     }
 

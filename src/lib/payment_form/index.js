@@ -67,14 +67,21 @@ function validExpiry(exp) {
     if(exp.split("/").length !== 2) {
         return "Format in MM/YY"
     }
+    if(exp.length > 5) return "Format in MM/YY";
     const [a,b] = exp.split("/");
     try {
         const m = parseInt(a);
-        if(m < 1 || m > 12) {
+        if(a.match(/\D/)) {
+            return "MM has to be a valid month in digits"
+        }
+        if(m < 1 || m > 12 || a.length > 2) {
             return "MM has to be 1 to 12"
         }
         try {
             const yy = parseInt(b);
+            if(b.match(/\D/)) {
+                return "YY has to be a valid year in digits"
+            }
             const now = new Date();
             const cY = now.getFullYear();
             const cM = now.getMonth() + 1;
@@ -111,6 +118,7 @@ function limitCVV(ele) {
         ele.value = ele.value.split('')
             .filter(x => x.match(/^\d$/))
             .join("").substring(0, 3);
+        ele.dispatchEvent(new Event("input"));
     })
 }
 

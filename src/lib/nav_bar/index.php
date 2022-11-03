@@ -5,6 +5,7 @@ return function($page) {
     $navEle = require("./lib/nav_ele/index.php");
     echo <<<HEREDOCS
     <div class="nav-bar-container">
+        <div class="nav-header">Projectionist</div>
     HEREDOCS;
 
     $navEle("Home", "index.php", $page == "home" ? "selected" : "");
@@ -19,6 +20,7 @@ return function($page) {
         $navEle("Login", "login.php", $page == "login" ? "selected" : "");
 
     }
+    
 
     echo <<<HEREDOCS
     </div>
