@@ -29,6 +29,8 @@ $tt = $ttRepo->getAll();
             "showtime",
             "seating",
             "ticket_selector",
+            "success_panel",
+            "error_panel",
         ], [
     ], [
             "showtime",

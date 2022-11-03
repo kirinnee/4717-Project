@@ -11,10 +11,9 @@
             <img src=".\lib\images\stock-founder.jpg" alt="Picture_1">
         </div>
     </div>
-    <div class="content">
+    <div class="content second">
         <div class="pictures">
             <img src=".\lib\images\stock-team.jpg" alt="Picture_2">
-
         </div>
         <div class="words">
             <div class="big">AWESOME</div>

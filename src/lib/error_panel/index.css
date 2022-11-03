@@ -9,4 +9,5 @@ div.error-panel {
     max-width: 600px;
     margin: 12px auto;
     border-radius: 8px;
+    transition: opacity 5s;
 }

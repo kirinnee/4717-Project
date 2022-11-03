@@ -1,7 +1,17 @@
 <?php require_once("./classlib/auth.php") ?>
 <?php
 // redirect if not logged in
-privatePage("login.php");
+
+$append = "";
+foreach ($_POST as $k => $v) {
+    $append .= "$k=$v&";
+}
+$id ="";
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+}
+$append .= "redirect=shows.php?id=$id";
+privatePage("login.php?$append");
 require_once("./classlib/movie.php");
 require_once("./classlib/tickets.php");
 require_once("./db.php");

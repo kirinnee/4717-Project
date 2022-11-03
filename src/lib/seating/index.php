@@ -136,6 +136,9 @@ EOL;
     }
     echo <<<EOL
 </div>
+    <div class="error-bar">
+
+    </div>
     <div class="pay">
 
         <div class="button">

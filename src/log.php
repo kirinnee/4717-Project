@@ -26,7 +26,18 @@ try {
             $success[] = "Successfully Logged In!";
             $_SESSION['success'] = $success;
             $_SESSION['user_id'] = $row["id"];
-            header("Location: index.php");
+            if(isset($_POST['redirect'])) {
+
+                $rd = $_POST['redirect'];
+                $append = "";
+                foreach ($_POST as $k => $v) {
+                    if($k != "email" && $k != "password")
+                        $append .= "$k=$v&";
+                }
+                header("Location: $rd?$append");
+                exit();
+            }
+            header("Location: shows.php");
             exit();
         }
     }
